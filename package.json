@@ -1,0 +1,53 @@
+{
+  "activationEvents": [],
+  "bugs": {
+    "url": "https://github.com/tillig/vscode-azdo-toc/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "markdown.markdownItPlugins": true
+  },
+  "dependencies": {
+  },
+  "description": "Adds Azure DevOps table-of-contents macro support to the built-in Markdown preview.",
+  "devDependencies": {
+    "@types/markdown-it": "^12.0.1",
+    "@types/vscode": "^1.59.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-config-google": "^0.14.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^5.0.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^5.1.1"
+  },
+  "displayName": "Markdown Azure DevOps TOC",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "homepage": "https://github.com/tillig/vscode-azdo-toc",
+  "keywords": [
+    "markdown",
+    "azdo",
+    "azure devops"
+  ],
+  "license": "MIT",
+  "main": "./dist/extension.js",
+  "name": "vscode-azdo-toc",
+  "publisher": "TravisIllig",
+  "qna": "https://github.com/tillig/vscode-azdo-toc/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tillig/vscode-azdo-toc"
+  },
+  "scripts": {
+    "compile": "tsc -b",
+    "debug-package": "webpack --mode development",
+    "vscode:prepublish": "webpack --mode production",
+    "watch": "tsc -b -w"
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": [
+      "es2022"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "outDir": "out",
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022"
+  },
+  "exclude": [
+    "node_modules",
+    ".vscode-test"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}
