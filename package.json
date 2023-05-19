@@ -44,6 +44,7 @@
   },
   "scripts": {
     "compile": "tsc -b",
+    "lint": "eslint . --ext .ts",
     "debug-package": "webpack --mode development",
     "vscode:prepublish": "webpack --mode production",
     "watch": "tsc -b -w"
