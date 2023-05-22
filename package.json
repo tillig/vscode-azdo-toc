@@ -47,6 +47,7 @@
   "scripts": {
     "compile": "tsc -b",
     "debug-package": "webpack --mode development",
+    "deploy": "vsce publish",
     "lint": "eslint . --ext .ts",
     "vscode:prepublish": "webpack --mode production",
     "watch": "tsc -b -w"
