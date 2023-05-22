@@ -1,5 +1,6 @@
 {
-  "activationEvents": [],
+  "activationEvents": [
+  ],
   "bugs": {
     "url": "https://github.com/tillig/vscode-azdo-toc/issues"
   },
@@ -28,6 +29,7 @@
     "vscode": "^1.59.0"
   },
   "homepage": "https://github.com/tillig/vscode-azdo-toc",
+  "icon": "docs/logo128.png",
   "keywords": [
     "markdown",
     "azdo",
@@ -44,8 +46,8 @@
   },
   "scripts": {
     "compile": "tsc -b",
-    "lint": "eslint . --ext .ts",
     "debug-package": "webpack --mode development",
+    "lint": "eslint . --ext .ts",
     "vscode:prepublish": "webpack --mode production",
     "watch": "tsc -b -w"
   },

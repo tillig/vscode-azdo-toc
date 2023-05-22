@@ -8,7 +8,6 @@
 **/*.ts
 **/tsconfig.json
 **/tslint.json
-docs/**
 node_modules/**
 out/**
 src/**
