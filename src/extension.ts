@@ -1,10 +1,8 @@
 import type MarkdownIt from 'markdown-it';
-import Renderer from 'markdown-it/lib/renderer';
-import StateCore from 'markdown-it/lib/rules_core/state_core';
+import { Renderer, StateCore } from 'markdown-it';
 
 /**
  * Activates the extension and attaches the Azure DevOps TOC preview to the Markdown preview.
- * @param {vscode.ExtensionContext} context The extension context with which commands may be registered.
  * @return {function(MarkdownIt): MarkdownIt} A function to execute to add the rules for preview.
  */
 export function activate() {

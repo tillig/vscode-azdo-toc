@@ -3,6 +3,11 @@
     "azdo",
     "unindents"
   ],
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   "files.exclude": {
     "out": false
   },
