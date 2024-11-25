@@ -1,4 +1,4 @@
-import type MarkdownIt from 'markdown-it';
+import MarkdownIt from 'markdown-it';
 import { Renderer, StateCore } from 'markdown-it';
 
 /**
@@ -99,11 +99,28 @@ function tocPreviewer(md: MarkdownIt) {
 
 /**
  * Converts header text into an anchor link.
- * @param {string} s The header content to convert.
+ * @param {string} title The header content to convert.
  * @return {string} The anchor link associated with the header.
  */
-function slugify(s: string): string {
-  return encodeURIComponent(
-    String(s).trim().toLowerCase().replace(/\s+/g, '-')
+function slugify(title: string): string {
+  // Slugify in the same way the VS Code Markdown language features do it.
+  // https://github.com/microsoft/vscode/blob/8eb7fac5658846e35a0399dc65e9a0580d4e4ed7/extensions/markdown-language-features/src/slugify.ts#L20
+  //
+  // Known issue - Markdown language features track the list of headers to
+  // ensure that if two headers are identical, the slug will get a counter
+  // number appended. We're not doing that here. If someone wants to submit a PR
+  // for it, awesome; but for a preview this is probably good enough.
+  return encodeURI(
+    title
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace whitespace with -
+      // allow-any-unicode-next-line
+      .replace(
+        /[\]\[\!\/\'\"\#\$\%\&\(\)\*\+\,\.\/\:\;\<\=\>\?\@\\\^\{\|\}\~\`。，、；：？！…—·ˉ¨‘’“”々～‖∶＂＇｀｜〃〔〕〈〉《》「」『』．〖〗【】（）［］｛｝]/g,
+        ''
+      ) // Remove known punctuators
+      .replace(/^\-+/, '') // Remove leading -
+      .replace(/\-+$/, '') // Remove trailing -
   );
 }
